@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Admin from "./pages/Admin";
+import Turnos from "./pages/Turnos";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 
@@ -14,6 +15,7 @@ function App() {
       <div className="flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/turnos" element={<Turnos />} />
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<Admin />} />
         </Routes>

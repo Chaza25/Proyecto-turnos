@@ -13,3 +13,4 @@ If you are developing a production application, we recommend using TypeScript wi
 
 1-Instalacion de Tailwind
 2-Instalacion de React Router Dom
+3-Instalacion de Zustand
