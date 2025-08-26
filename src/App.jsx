@@ -6,6 +6,8 @@ import Turnos from "./pages/Turnos";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Reservas from "./pages/Reservas";
+import Error from "./pages/Error";
+import MisReservas from "./pages/MisReservas";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/reserva" element={<Reservas />} />
+          <Route path="/mis-reservas" element={<MisReservas />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </div>
       {/* Footer */}
