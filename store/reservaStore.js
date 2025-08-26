@@ -1,19 +1,30 @@
 import { create } from 'zustand';
 
 const useReservaStore = create((set) => ({
-    servicioSeleccionado: null, // Quincho o pileta
-    fechaSeleccionada: null, // Fecha seleccionada para la reserva
-    horarioSeleccionado: null, // Horario seleccionado para la reserva
+    reserva: {
+        servicio: null,
+        fecha: null,
+        horario: null,
+    },
+    setServicio: (servicio) =>
+        set((state) => ({
+            reserva: { ...state.reserva, servicio }
+        })),
+    
+    setFecha: (fecha) =>
+        set((state) => ({
+            reserva: { ...state.reserva, fecha}
+        })),
+    
+    setHorario: (horario) =>
+        set((state) => ({
+            reserva: { ...state.reserva, horario}
+        })),
 
-    //Funciones para actualizar el estado
-    setServicio: (servicio) => set({ servicioSeleccionado: servicio }),
-    setFecha: (fecha) => set({ fechaSeleccionada: fecha }),
-    setHorario: (horario) => set({ horarioSeleccionado: horario }),
-
-    //Funcion para resetear la reserva
-    resetReserva: () => set({ 
-        servicioSeleccionado: null, 
-        fechaSeleccionada: 
-        null, horarioSeleccionado: null 
-    }),
+    resetReserva: () =>
+        set(() => ({
+            reserva: { servicio: null, fecha: null, horario: null}
+        })),
 }));
+
+export default useReservaStore;

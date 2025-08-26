@@ -1,4 +1,21 @@
+import { useNavigate } from "react-router-dom";
+import useReservaStore from "../../store/reservaStore";
+
 function Home() {
+
+    const navigate = useNavigate();
+    const setServicio = useReservaStore((state) => state.setServicio);
+
+    const handleReservaQuincho = () => {
+        setServicio("Quincho"); //Guarda el servicio seleccionado en el store
+        navigate('/reserva'); //Navega a la pagina de reserva
+    }
+
+    const handleReservaPileta = () => {
+        setServicio("Pileta"); //Guarda el servicio seleccionado en el store
+        navigate('/reserva'); //Navega a la pagina de reserva
+    }
+
     return (
         <>
         <div className="mx-auto py-5 text-center bg-amber-200">
@@ -21,7 +38,9 @@ function Home() {
                         </ul>   
                     </div>
                     {/*Boton de reserva */}
-                    <button className="mt-6 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                    <button
+                    className="mt-6 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                    onClick={handleReservaQuincho}>
                         Reserva tu turno en el quincho
                     </button>
                 </aside>
@@ -39,7 +58,9 @@ function Home() {
                         </ul>
                     </div>
                     {/*Boton de reserva */}
-                    <button className="mt-6 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                    <button
+                    className="mt-6 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                    onClick={handleReservaPileta}>
                         Reserva tu turno en la pileta
                     </button>
                 </section>
